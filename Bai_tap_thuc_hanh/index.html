@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa hàng Sách ABC - Trang chủ</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Cửa hàng Sách ABC</h1>
+        
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#products">Sản phẩm</a></li>
+                <li><a href="#contact-form">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="intro">
+            <h2>Khám phá thế giới qua những trang sách!</h2>
+            <p>Chúng tôi mang đến những đầu sách chọn lọc, chất lượng với giá tốt nhất.</p>
+        </section>
+
+        <section id="search-section">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+            <button id="searchBtn">Tìm</button>
+            <button id="addProductBtn">Thêm sản phẩm</button>
+        </section>
+        
+        <form id="addProductForm" class="hidden"> 
+            <h3>Thêm sản phẩm mới</h3>
+            <label for="newName">Tên sản phẩm: </label>
+            <input type="text" id="newName" required>
+            
+            <label for="newPrice">Giá: </label>
+            <input type="number" id="newPrice" required min="0" step="any">
+            
+            <label for="newDesc">Mô tả: </label>
+            <textarea id="newDesc" rows="3"></textarea>
+            
+            <button type="submit">Thêm</button>
+            <button type="button" id="cancelBtn">Hủy</button> <p id="errorMsg" style="color:red;"></p> </form>
+
+        <section id="products">
+            <h2>Sản phẩm nổi bật</h2>
+            <div id="product-list">
+                
+                <article class="product-item">
+                    <img src="https://via.placeholder.com/300x200?text=Sach+A" alt="Bìa sách A" style="max-width: 100%;">
+                    <h3 class="product-name">Sách Lập Trình Web Hiện Đại</h3>
+                    <p class="product-desc">Tập trung vào HTML5, CSS3 và JavaScript. Lý tưởng cho người mới bắt đầu.</p>
+                    <p class="product-price">Giá: <span class="price">250.000</span> VNĐ</p>
+                </article>
+
+                <article class="product-item">
+                    <img src="https://via.placeholder.com/300x200?text=Sach+B" alt="Bìa sách B" style="max-width: 100%;">
+                    <h3 class="product-name">10 Ngày Học JavaScript</h3>
+                    <p class="product-desc">Học những kiến thức cơ bản về DOM và tương tác với trang web.</p>
+                    <p class="product-price">Giá: <span class="price">180.000</span> VNĐ</p>
+                </article>
+
+                <article class="product-item">
+                    <img src="https://via.placeholder.com/300x200?text=Sach+C" alt="Bìa sách C" style="max-width: 100%;">
+                    <h3 class="product-name">Thiết Kế Responsive Với Flexbox & Grid</h3>
+                    <p class="product-desc">Hướng dẫn chi tiết cách tạo bố cục linh hoạt cho mọi màn hình.</p>
+                    <p class="product-price">Giá: <span class="price">320.000</span> VNĐ</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="contact-form">
+            <h2>Đăng ký nhận tin tức</h2>
+            <form action="#" method="POST">
+                <p>
+                    <label for="name">Tên của bạn:</label>
+                    <input type="text" id="name" name="name" required>
+                </p>
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </p>
+                <p>
+                    <label for="message">Lời nhắn (Tùy chọn):</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </p>
+                <button type="submit">Gửi</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cửa hàng Sách ABC. Địa chỉ: Số 123 Đường Công Nghệ, Hà Nội.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

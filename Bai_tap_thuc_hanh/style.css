@@ -1,0 +1,291 @@
+/* Khai báo CSS Variables (Biến CSS) để dễ dàng quản lý màu sắc */
+:root {
+    --primary-color: #007bff; /* Xanh dương nổi bật */
+    --secondary-color: #28a745; /* Xanh lá (cho giá/thành công) */
+    --text-dark: #343a40; 
+    --text-light: #f8f9fa;
+    --background-light: #ffffff;
+    --background-grey: #f8f9fa;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+}
+
+/* 1. Thiết lập chung và Typography */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: var(--background-grey);
+    color: var(--text-dark);
+}
+
+/* 2. Header và Navigation (ĐÃ CẬP NHẬT) */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1.5em 5%; /* Thêm padding 5% ở hai bên */
+    box-shadow: 0 4px 6px var(--shadow-light);
+    
+    /* Yêu cầu: Logo bên trái, Menu bên phải */
+    display: flex;
+    justify-content: space-between; /* Đẩy 2 mục con ra 2 phía */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+header h1 {
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0; /* Xóa margin mặc định */
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600; /* Dùng font dày hơn */
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Hiệu ứng hover nhẹ */
+}
+
+/* 3. Main Content và Intro Section */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: var(--background-light);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+/* 4. Search và Add Product Section */
+#search-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--background-light);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px var(--shadow-light);
+}
+
+#searchInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+/* 5. Định dạng Button chung */
+button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px); /* Hiệu ứng nhấc nhẹ khi hover */
+}
+
+/* ĐÃ KHÔI PHỤC: Màu sắc riêng cho nút Thêm sản phẩm */
+#addProductBtn {
+    background-color: var(--secondary-color);
+}
+
+#addProductBtn:hover {
+    background-color: #218838;
+}
+
+/* 6. Danh sách sản phẩm (Product List) - TẠO CÁC Ô RIÊNG */
+#products h2 {
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+#product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Tăng khoảng cách giữa các sản phẩm */
+    margin-top: 20px;
+}
+
+.product-item {
+    flex: 1 1 calc(33.333% - 20px); /* Đảm bảo 3 cột và tính cả gap */
+    box-sizing: border-box;
+    border: 1px solid #e9ecef;
+    padding: 20px;
+    border-radius: 10px; /* Bo tròn góc nhiều hơn */
+    background: var(--background-light); /* Nền trắng */
+    box-shadow: 0 5px 15px var(--shadow-light); /* Bóng đổ nổi bật hơn */
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.product-item:hover {
+    transform: translateY(-5px); /* Hiệu ứng nhấc lên khi hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-item img {
+    border-radius: 8px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+/* Định dạng nội dung bên trong sản phẩm */
+.product-item h3 {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--primary-color);
+    min-height: 2.6em; /* Giữ chiều cao cố định cho tên */
+}
+
+.product-item .product-price {
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.product-item .product-price .price {
+    font-weight: bold;
+    color: var(--secondary-color); /* Giá màu xanh lá */
+    font-size: 1.2em;
+}
+
+/* 7. Định dạng Form (Contact và Add Product) - CĂN GIỮA */
+#contact-form form, #addProductForm {
+    max-width: 500px; 
+    margin: 30px auto; /* "auto" giúp căn giữa */
+    padding: 30px;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    background-color: var(--background-light);
+    box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+#contact-form label, #addProductForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+#contact-form input, 
+#contact-form textarea, 
+#addProductForm input,
+#addProductForm textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+#cancelBtn {
+    background-color: #6c757d;
+    margin-left: 10px;
+}
+
+#cancelBtn:hover {
+    background-color: #5a6268;
+}
+
+/* 8. Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--text-dark);
+    color: #adb5bd;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+/* Class để ẩn form (từ Bài 3) */
+.hidden {
+    display: none !important; 
+}
+
+/* 9. Thiết kế Responsive */
+@media (max-width: 992px) {
+    /* Chuyển sang 2 cột trên màn hình tablet */
+    .product-item {
+        flex: 1 1 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Chỉnh sửa header trên mobile */
+    header {
+        flex-direction: column; /* Xếp chồng logo và nav */
+        padding: 1em 2%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Chuyển danh sách sản phẩm thành 1 cột */
+    #product-list {
+        gap: 20px;
+    }
+
+    .product-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    
+    #search-section {
+        flex-wrap: wrap;
+    }
+    
+    #searchBtn, #addProductBtn {
+        width: 48%; /* Chia 2 nút trên cùng 1 hàng */
+        flex-grow: 1;
+    }
+}
+
+/* Đảm bảo ảnh co dãn */
+img {
+    max-width: 100%;
+    height: auto;
+}
