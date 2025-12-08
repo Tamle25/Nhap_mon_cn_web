@@ -1,0 +1,3 @@
+mongodbdata/
+node_modules/
+.env
